@@ -1,0 +1,48 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.sub-title {
+	font-size: rem(10);
+	text-transform: uppercase;
+	line-height: math.div(12, 10);
+	letter-spacing: em(1, 10);
+	color: $lightGray;
+}
+
+.title-large {
+	font-family: 'Tenor Sans';
+	text-transform: uppercase;
+	line-height: math.div(42, 36);
+	font-size: rem(36);
+}
+
+.title {
+	font-family: 'TenorSans';
+	text-transform: uppercase;
+	font-size: rem(20);
+	line-height: math.div(24, 20);
+}
+
+.after-title {
+	font-size: rem(10);
+	text-transform: uppercase;
+	line-height: math.div(12, 10);
+	letter-spacing: em(1, 10);
+	font-weight: 700;
+}
+
+.button {
+	display: inline-block;
+	font-size: rem(10);
+	letter-spacing: em(1, 10);
+	text-transform: uppercase;
+	padding: rem(21) rem(26);
+	border: rem(1) solid $dark;
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover){
+		&:hover{
+			background-color: $dark;
+			color: $light;
+		}
+	}
+}

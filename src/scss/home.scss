@@ -1,0 +1,137 @@
+//====================================================================================================
+
+.main-block {
+
+	&__container {
+		display: grid;
+		grid-template-columns: percent(721, $maxWidthContainer) percent(420, $maxWidthContainer);
+		gap: rem(50);
+		@include adaptiveValue("padding-top", 60, 45);
+		@include adaptiveValue("padding-bottom", 30, 20);
+
+		@media (max-width:$tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__image-ibg {
+		padding-bottom: percent(474, 721);
+	}
+
+	&__content {}
+
+	&__sub-title {}
+
+	&__title {
+		margin-top: rem(18);
+	}
+
+	&__text {
+		margin-top: rem(27);
+		font-family: 'SourceSerifPro';
+		font-size: rem(16);
+		line-height: math.div(24, 16);
+		color: $gray;
+	}
+
+	&__after-title {
+		margin-top: rem(28);
+	}
+}
+
+//====================================================================================================
+
+.photography-list {
+
+	&_3 {}
+
+	&_4 {}
+
+	&_2 {}
+
+	&__container {
+		@include adaptiveValue("padding-top", 60, 25);
+		@include adaptiveValue("padding-bottom", 60, 25);
+	}
+
+	&__items {
+		display: grid;
+		column-gap: rem(20);
+		row-gap: rem(50);
+
+		.photography-list_3 & {
+			grid-template-columns: 1fr 1fr 1fr;
+
+			@media (max-width:$mobile) {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@media (max-width: em(500)) {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.photography-list_4 & {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
+			@media (max-width:$tablet) {
+				grid-template-columns: 1fr 1fr 1fr;
+			}
+
+			@media (max-width:$mobile) {
+				grid-template-columns: 1fr 1fr;
+			}
+
+			@media (max-width: em(500)) {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.photography-list_2 & {
+			grid-template-columns: 1fr 1fr;
+
+			@media (max-width: $mobile) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&__item {}
+
+	&__title {
+		margin-bottom: rem(30);
+	}
+
+	&__button {
+		@include adaptiveValue("margin-top", 65, 40);
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.photography-card {
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover){
+		&:hover{
+			transform: translate(rem(2), rem(-3));
+		}
+	}
+
+	&__image-ibg {
+		padding-bottom: percent(254, 387);
+	}
+
+	&__sub-title {
+		margin-top: rem(24);
+	}
+
+	&__title {
+		margin-top: rem(18);
+	}
+
+	&__after-title {
+		margin-top: rem(15);
+	}
+}

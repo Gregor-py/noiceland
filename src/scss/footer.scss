@@ -1,0 +1,184 @@
+//====================================================================================================
+
+.footer {
+	background: #141414;
+
+	&__container {
+		@include adaptiveValue("padding-top", 35, 20);
+		@include adaptiveValue("padding-bottom", 35, 20);
+	}
+
+	&__header {
+		@include adaptiveValue("padding-top", 60, 40);
+		@include adaptiveValue("padding-bottom", 60, 40);
+	}
+
+	&__body {
+		@include adaptiveValue("padding-top", 60, 40);
+		@include adaptiveValue("padding-bottom", 60, 40);
+	}
+}
+
+.header-footer {
+	display: flex;
+	align-items: center;
+	gap: rem(15);
+	flex-wrap: wrap;
+	border-bottom: rem(1) solid #4D4D4D;
+
+	&__logo {}
+
+	&__rights {
+		font-size: rem(10);
+		color: $gray;
+		text-transform: uppercase;
+		letter-spacing: em(1, 10);
+	}
+}
+
+.body-footer {
+	display: grid;
+	grid-template-columns: percent(770, $maxWidthContainer) percent(300, $maxWidthContainer);
+	@include adaptiveValue("column-gap", 125, 40, 1100, 990, 1);
+	row-gap: rem(40);
+
+	@media (max-width:$tablet) {
+		grid-template-columns: 1fr;
+	}
+
+	&__navigation {}
+
+	&__form {}
+}
+
+.navigation-footer {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(40);
+
+	&__row {}
+
+	&__spollers {}
+}
+
+.spollers {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	@include adaptiveValue("column-gap", 80, 40);
+	row-gap: rem(20);
+
+	@media (max-width:$mobileSmall) {
+		justify-content: flex-start;
+	}
+
+	&__item {}
+
+	&__title {
+		font-size: rem(10);
+		letter-spacing: em(1, 10);
+		color: $gray;
+		line-height: math.div(15, 10);
+		text-transform: uppercase;
+
+		@media (max-width:$mobileSmall) {
+			font-size: rem(20);
+
+			&::after {
+				transition: transform 0.3s ease 0s;
+				display: inline-block;
+				content: url('@img/icons/arrow-right.svg');
+				margin-left: rem(8);
+				transform: rotate(90deg);
+			}
+
+			&._spoller-active {
+				&::after{
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
+
+	&__body {
+		margin-top: rem(20);
+	}
+
+	&__menu {}
+}
+
+.menu-spollers {
+
+	&__body {}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: rem(15);
+
+		&_rows {
+			flex-direction: row;
+			@include adaptiveValue("column-gap", 80, 40);
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		.menu-spollers__list_rows & {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(15);
+		}
+	}
+
+	&__link {
+		line-height: math.div(24, 14);
+		color: $light;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.form-footer {
+
+	&__label {
+		font-size: rem(10);
+		letter-spacing: em(1, 10);
+		color: $gray;
+		line-height: math.div(15, 10);
+		text-transform: uppercase;
+	}
+
+	&__input {
+		margin-top: rem(20);
+		display: flex;
+
+		input {
+			border: 1px solid #CCCCCC;
+			padding: rem(18) rem(24);
+			font-size: rem(10);
+			line-height: math.div(12, 10);
+			color: $gray;
+			letter-spacing: em(1, 10);
+			text-transform: uppercase;
+			flex: 1 1 auto
+		}
+	}
+
+	&__button {
+		background-color: $dark;
+		padding: rem(18) rem(24);
+		font-size: rem(10);
+		line-height: math.div(12, 10);
+		color: $light;
+		letter-spacing: em(1, 10);
+		text-transform: uppercase;
+	}
+}
+
+
+//====================================================================================================
